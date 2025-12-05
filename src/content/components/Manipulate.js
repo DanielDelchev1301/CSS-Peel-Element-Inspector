@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PROPERTIES } from "../utils/helperFunctions.js";
 
-const Inject = ({setTabOpen, popupOnRight, clickedElement}) => {
+const Manipulate = ({setTabOpen, popupOnRight, clickedElement}) => {
   const [elementValues, setElementValues] = useState({});
 
   useEffect(() => {
@@ -21,11 +21,11 @@ const Inject = ({setTabOpen, popupOnRight, clickedElement}) => {
   };
 
   return (
-    <div id="element-inject-overlay" className={popupOnRight ? "popup-right" : "popup-left"}>
-      <button id="close-injected-btn" onClick={() => setTabOpen(state => ({...state, inject: false}))}>Close</button>
-      <h3 style={{color: "#676767"}}>Injected elements</h3>
+    <div id="element-manipulate-overlay" className={popupOnRight ? "popup-right" : "popup-left"}>
+      <button id="close-manipulate-btn" onClick={() => setTabOpen(state => ({...state, manipulate: false}))}>Close</button>
+      <h3 style={{color: "#676767"}}>Manipulate element</h3>
 
-      <div id="inject-main-flex-container">
+      <div id="manipulate-main-flex-container">
         {Object.values(PROPERTIES).map((property, index) => (
           <div key={index} className="label-value-container">
             <label htmlFor={property}>{property}</label>
@@ -37,4 +37,4 @@ const Inject = ({setTabOpen, popupOnRight, clickedElement}) => {
   );
 };
 
-export default Inject;
+export default Manipulate;

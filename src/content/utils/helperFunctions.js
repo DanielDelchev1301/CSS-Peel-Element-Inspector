@@ -1,4 +1,4 @@
-export const isInOverlay = (el) => !!el.closest?.("#element-inspector-extension-container-shadow-host, #element-info-overlay, #element-assets-overlay, #element-palette-overlay, #element-typography-overlay, #element-inject-overlay, #element-color-picker-overlay, #element-highlighted-element-box");
+export const isInOverlay = (el) => !!el.closest?.("#element-inspector-extension-container-shadow-host, #element-info-overlay, #element-assets-overlay, #element-palette-overlay, #element-typography-overlay, #element-manipulate-overlay, #element-color-picker-overlay, #element-highlighted-element-box");
 
 export const PROPERTIES = {
   display: "display",
@@ -140,4 +140,11 @@ export const createBoxModelVisualization = (boxModelData, canvas) => {
   // Content labels
   drawLabel(width, "-", canvasSize / 2, canvasSize / 2);
   drawLabel(height, "-", canvasSize / 2 + 40, canvasSize / 2, true);
+};
+
+export const handleClickColor = (color, e) => {
+  navigator.clipboard.writeText(color);
+  const el = e.currentTarget;
+  el.classList.add('clicked');
+  setTimeout(() => el.classList.remove('clicked'), 150);
 };

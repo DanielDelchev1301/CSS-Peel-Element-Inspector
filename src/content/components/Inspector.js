@@ -3,7 +3,7 @@ import { createBoxModelVisualization, getStructuredCSSHtml, isInOverlay } from "
 import Assets from "./Assets.js";
 import Palette from "./Palette.js";
 import Typography from "./Typography.js";
-import Inject from "./Inject.js";
+import Manipulate from "./Manipulate.js";
 import ColorPickerComponent from "./ColorPicker.js";
 
 const Inspector = () => {
@@ -14,7 +14,7 @@ const Inspector = () => {
     assets: false,
     palette: false,
     typography: false,
-    inject: false,
+    manipulate: false,
     colorPicker: false
   });
 
@@ -163,7 +163,7 @@ const Inspector = () => {
           <button id="popup-assets-btn" onClick={() => setTabOpen(state => ({...state, assets: true}))}>Assets</button>
           <button id="popup-palette-btn" onClick={() => setTabOpen(state => ({...state, palette: true}))}>Palette</button>
           <button id="popup-typography-btn" onClick={() => setTabOpen(state => ({...state, typography: true}))}>Typography</button>
-          <button id="popup-inject-btn" onClick={() => setTabOpen(state => ({...state, inject: true}))}>Inject</button>
+          <button id="popup-manipulate-btn" onClick={() => setTabOpen(state => ({...state, manipulate: true}))}>Manipulate</button>
           <button id="popup-color-picker-btn" onClick={() => setTabOpen(state => ({...state, colorPicker: true}))}>Color Picker</button>
           {clickedElementRef.current ? getTagIdAndClasses() : null}
           <pre>{clickedElementRef.current ? populateAllCssStyles() : null}</pre>
@@ -182,8 +182,8 @@ const Inspector = () => {
         ? <Typography setTabOpen={setTabOpen} popupOnRight={popupOnRight} /> 
         : null
       }
-      {tabOpen.inject 
-        ? <Inject setTabOpen={setTabOpen} popupOnRight={popupOnRight} clickedElement={clickedElementRef.current} /> 
+      {tabOpen.manipulate 
+        ? <Manipulate setTabOpen={setTabOpen} popupOnRight={popupOnRight} clickedElement={clickedElementRef.current} /> 
         : null
       }
       {tabOpen.colorPicker 

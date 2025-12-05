@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { handleClickColor } from "../utils/helperFunctions.js";
 
 const Palette = ({setTabOpen, popupOnRight}) => {
   const [paletteColors, setPaletteColors] = useState([]);
@@ -33,13 +34,6 @@ const Palette = ({setTabOpen, popupOnRight}) => {
 
     setPaletteColors(Array.from(colors));
   }, []);
-
-  const handleClickColor = (color, e) => {
-    navigator.clipboard.writeText(color);
-    const el = e.currentTarget;
-    el.classList.add('clicked');
-    setTimeout(() => el.classList.remove('clicked'), 150);
-  };
 
   return (
     <div id="element-palette-overlay" className={popupOnRight ? "popup-right" : "popup-left"}>

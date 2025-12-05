@@ -82,7 +82,7 @@
   }
 
 
-  #popup-switch-btn, #popup-assets-btn, #popup-palette-btn, #popup-typography-btn, #popup-inject-btn, #popup-color-picker-btn {
+  #popup-switch-btn, #popup-assets-btn, #popup-palette-btn, #popup-typography-btn, #popup-manipulate-btn, #popup-color-picker-btn {
     position: absolute;
     left: auto;
     right: 10px;
@@ -114,7 +114,7 @@
     top: 80px;
   }
 
-  #popup-inject-btn {
+  #popup-manipulate-btn {
     top: 105px;
   }
 
@@ -122,7 +122,7 @@
     top: 130px;
   }
 
-  #popup-switch-btn:hover, #popup-assets-btn:hover, #popup-palette-btn:hover, #popup-typography-btn:hover, #popup-inject-btn:hover, #popup-color-picker-btn:hover {
+  #popup-switch-btn:hover, #popup-assets-btn:hover, #popup-palette-btn:hover, #popup-typography-btn:hover, #popup-manipulate-btn:hover, #popup-color-picker-btn:hover {
     color: #e1e1e1;
     background-color: #676767;
   }
@@ -140,7 +140,7 @@
 }
 
 
-#element-assets-overlay, #element-palette-overlay, #element-typography-overlay, #element-inject-overlay, .element-color-picker-overlay {
+#element-assets-overlay, #element-palette-overlay, #element-typography-overlay, #element-manipulate-overlay, .element-color-picker-overlay {
   position: fixed;
   top: 40px;
   z-index: 2147483648;
@@ -259,7 +259,7 @@
   
 }
 
-#element-palette-overlay #palette-main-flex-container, #element-typography-overlay #typography-main-flex-container, #element-inject-overlay #inject-main-flex-container, .element-color-picker-overlay #color-picker-flex-container {
+#element-palette-overlay #palette-main-flex-container, #element-typography-overlay #typography-main-flex-container, #element-manipulate-overlay #manipulate-main-flex-container, .element-color-picker-overlay #color-picker-flex-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -287,7 +287,7 @@
   cursor: pointer;
 }
 
-#element-inject-overlay #inject-main-flex-container {
+#element-manipulate-overlay #manipulate-main-flex-container {
 
   .label-value-container {
     display: flex;
@@ -338,7 +338,7 @@
   transition: all 0.5s ease;
 }
 
-#close-assets-btn, #close-palette-btn, #close-typography-btn, #close-injected-btn, #delete-injected-btn, #close-color-picker-btn {
+#close-assets-btn, #close-palette-btn, #close-typography-btn, #close-manipulate-btn, #delete-manipulate-btn, #close-color-picker-btn {
   cursor: pointer;
   color: #676767;
   background-color: #e1e1e1;
@@ -362,11 +362,11 @@
   transition: all 0.5s ease;
 }
 
-#delete-injected-btn { 
+#delete-manipulate-btn { 
   width: 100%;
 }
 
-#close-assets-btn:hover, #close-palette-btn:hover, #close-typography-btn:hover, #close-injected-btn:hover, #delete-injected-btn:hover, #close-color-picker-btn:hover, #pick-from-page-btn:hover {
+#close-assets-btn:hover, #close-palette-btn:hover, #close-typography-btn:hover, #close-manipulate-btn:hover, #delete-manipulate-btn:hover, #close-color-picker-btn:hover, #pick-from-page-btn:hover {
   color: #e1e1e1;
   background-color: #676767;
 }

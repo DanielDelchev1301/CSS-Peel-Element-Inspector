@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SketchPicker } from "react-color";
+import { handleClickColor } from "../utils/helperFunctions.js";
 
 const ColorPickerComponent = ({setTabOpen, popupOnRight}) => {
   const [color, setColor] = useState({ hex: "#ffffff"});
@@ -16,13 +17,6 @@ const ColorPickerComponent = ({setTabOpen, popupOnRight}) => {
     } else {
       alert("Your browser does not support the EyeDropper API.");
     }
-  };
-
-  const handleClickColor = (color, e) => {
-    navigator.clipboard.writeText(color);
-    const el = e.currentTarget;
-    el.classList.add('clicked');
-    setTimeout(() => el.classList.remove('clicked'), 150);
   };
 
   return (
