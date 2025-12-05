@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { applyClickedEffect } from "../utils/helperFunctions";
 
 const Assets = ({setTabOpen, popupOnRight}) => {
   const [images, setImages] = useState([]);
@@ -13,7 +14,9 @@ const Assets = ({setTabOpen, popupOnRight}) => {
     setImages([...new Set([...images, ...bgImages])]);
   }, []);
 
-  const handleDownload = (src) => {
+  const handleDownload = (src, e) => {
+    applyClickedEffect(e);
+    
     chrome.runtime.sendMessage(
       {
         type: "downloadAsset",
@@ -42,7 +45,7 @@ const Assets = ({setTabOpen, popupOnRight}) => {
               <img className="assets-main-flex-container-wrapper-img" src={src} alt="Download image" />
               <button
                 className="assets-main-flex-container-wrapper-download-btn"
-                onClick={() => handleDownload(src)}
+                onClick={(e) => handleDownload(src, e)}
               >Download</button>
             </div>
           ))

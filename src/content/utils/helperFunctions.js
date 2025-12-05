@@ -142,9 +142,13 @@ export const createBoxModelVisualization = (boxModelData, canvas) => {
   drawLabel(height, "-", canvasSize / 2 + 40, canvasSize / 2, true);
 };
 
-export const handleClickColor = (color, e) => {
-  navigator.clipboard.writeText(color);
+export const applyClickedEffect = (e) => {
   const el = e.currentTarget;
   el.classList.add('clicked');
   setTimeout(() => el.classList.remove('clicked'), 150);
+};
+
+export const handleClickColor = (color, e) => {
+  navigator.clipboard.writeText(color);
+  applyClickedEffect(e);
 };

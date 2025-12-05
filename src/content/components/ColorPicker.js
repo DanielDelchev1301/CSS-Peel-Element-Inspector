@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { SketchPicker } from "react-color";
-import { handleClickColor } from "../utils/helperFunctions.js";
+import { applyClickedEffect, handleClickColor } from "../utils/helperFunctions.js";
 
 const ColorPickerComponent = ({setTabOpen, popupOnRight}) => {
   const [color, setColor] = useState({ hex: "#ffffff"});
 
-  const handlePickFromPage = async () => {
+  const handlePickFromPage = async (e) => {
+    applyClickedEffect(e);
+    
     if ("EyeDropper" in window) {
       try {
         const eyeDropper = new EyeDropper();
