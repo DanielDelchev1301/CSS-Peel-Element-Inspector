@@ -416,7 +416,7 @@
     border-radius: 3px;
   }
 
-  .element-tag-class-id-label, .element-highlighted-tag-class-id-label {
+  .element-tag-class-label, .element-highlighted-tag-class-label {
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -435,7 +435,7 @@
   border: 2px solid rgb(162, 0, 255);
   background-color: rgba(162, 0, 255, 0.1);
 
-  .element-size-label, .element-tag-class-id-label {
+  .element-size-label, .element-tag-class-label {
     color: rgb(211, 134, 255);
   }
 }
@@ -444,7 +444,7 @@
   border: 2px solid rgb(0, 255, 85);
   background-color: rgba(0, 255, 85, 0.1);
 
-  .element-highlighted-size-label, .element-highlighted-tag-class-id-label {
+  .element-highlighted-size-label, .element-highlighted-tag-class-label {
     color: rgb(0, 255, 85);
   }
 }

@@ -52,10 +52,10 @@ const Inspector = () => {
         !el ||
         el.className === 'element-highlight-box' || 
         el.className === 'element-size-label' || 
-        el.className === 'element-tag-class-id-label' ||
+        el.className === 'element-tag-class-label' ||
         el.className === 'element-highlighted-element-box' ||
         el.className === 'element-highlighted-size-label' ||
-        el.className === 'element-highlighted-tag-class-id-label' ||
+        el.className === 'element-highlighted-tag-class-label' ||
         overlay.contains(el)
       ) return;
 
@@ -149,12 +149,12 @@ const Inspector = () => {
     <>
       <div className="element-highlighted-element-box" ref={highlightedElementBoxRef}>
         <div className="element-highlighted-size-label">{highlightedElementOpts.sizeLabel}</div>
-        <div className="element-highlighted-tag-class-id-label">{highlightedElementOpts.tagClassAndIdLabel}</div>
+        <div className="element-highlighted-tag-class-label">{highlightedElementOpts.tagClassAndIdLabel}</div>
       </div>
 
       <div className="element-highlight-box" ref={highlightBoxRef}>
         <div className="element-size-label">{highlightBoxOpts.sizeLabel}</div>
-        <div className="element-tag-class-id-label">{highlightBoxOpts.tagClassAndIdLabel}</div>
+        <div className="element-tag-class-label">{highlightBoxOpts.tagClassAndIdLabel}</div>
       </div>
       
       <div className={`element-info-overlay ${popupOnRight ? "popup-right" : "popup-left"}`} ref={overlayRef}>
