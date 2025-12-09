@@ -1,5 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { createBoxModelVisualization, getScrollableParent, getStructuredCSSHtml, handleHideShowBtn, isInOverlay, updateClickedHighlight } from "../utils/helperFunctions.js";
+import { 
+  allowDrop, 
+  createBoxModelVisualization, 
+  getScrollableParent, 
+  getStructuredCSSHtml, 
+  handleDrop, 
+  handleHideShowBtn, 
+  isInOverlay, 
+  updateClickedHighlight 
+} from "../utils/helperFunctions.js";
 import Assets from "./Assets.js";
 import Palette from "./Palette.js";
 import Typography from "./Typography.js";
@@ -98,7 +107,19 @@ const Inspector = () => {
 
     const onClick = (e) => {
       if (isInOverlay(e.target)) return;
+
+      if (clickedElementRef.current) {
+        clickedElementRef.current.removeEventListener("drop", handleDrop);
+        clickedElementRef.current.removeEventListener("dragover", allowDrop);
+      }
+
       clickedElementRef.current = e.target;
+
+      if (clickedElementRef.current.tagName === "IMG") {
+        clickedElementRef.current.addEventListener("drop", (e) => handleDrop(e, clickedElementRef));
+        clickedElementRef.current.addEventListener("dragover", allowDrop);
+      }
+
       scrollParentRef.current = getScrollableParent(e.target);
 
       e.preventDefault();

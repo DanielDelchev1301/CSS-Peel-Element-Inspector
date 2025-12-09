@@ -188,3 +188,22 @@ export const updateClickedHighlight = (clickedElementRef, highlightedElementBoxR
   box.style.left = rect.left + "px";
   box.style.display = "flex";
 };
+
+export const allowDrop = (e) => {
+  e.preventDefault();
+};
+
+export const handleDrop = (e, clickedElementRef) => {
+  e.preventDefault();
+
+  const file = e.dataTransfer.files?.[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) return;
+
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    clickedElementRef.current.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+};
