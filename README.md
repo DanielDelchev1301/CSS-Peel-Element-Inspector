@@ -193,7 +193,7 @@ Implemented with native HTML drag events — no external libraries.
 
 ### Image Drop on Element
 
-Each selected element (if <img>) receives a dynamically attached `ondrop` & `ondragover` listener.
+Each selected element (if **img**) receives a dynamically attached `ondrop` & `ondragover` listener.
 
 ---
 
