@@ -260,7 +260,7 @@ const Inspector = () => {
       name: attr.name,
       value: attr.value
     }));
-    
+
     return (
       <p className="element-tag-id-classes-preview">
         {allAttributes.length 
@@ -268,7 +268,7 @@ const Inspector = () => {
           : <span className="tag-with-bracket">&#10092;{tag}&#10093;<span className="children-preview">...</span>&#10092;/{tag}&#10093;</span> 
         }
         {allAttributes.map(attr => (
-          <span key={attr.name}>
+          <span className="attribute" key={attr.name}>
             <span className="attribute-name">{attr.name}</span>
             <span className="tag-with-bracket">="</span>
             <span className="attribute-value">{attr.value}</span>

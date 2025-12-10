@@ -31,16 +31,20 @@
       flex-direction: column;
       overflow-wrap: break-word;
 
+      .attribute {
+        margin-left: 10px;
+
+        .attribute-name {
+          color: #a14718;
+        }
+  
+        .attribute-value {
+          color: #174ea6;
+        }
+      }
+
       .tag-with-bracket {
         color: #a22f6c;
-      }
-
-      .attribute-name {
-        color: #a14718;
-      }
-
-      .attribute-value {
-        color: #174ea6;
       }
 
       .children-preview {
